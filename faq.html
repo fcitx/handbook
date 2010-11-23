@@ -1,0 +1,375 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>部分 IV. 常见问题</title>
+<link rel="stylesheet" href="docbook.css" type="text/css">
+<meta name="generator" content="DocBook XSL Stylesheets V1.75.2">
+<link rel="home" href="index.html" title="小企鹅输入法（fcitx）">
+<link rel="up" href="index.html" title="小企鹅输入法（fcitx）">
+<link rel="prev" href="others.html" title="第 11 章 其它功能">
+<link rel="next" href="thanks.html" title="部分 V. 致谢">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<div class="navheader">
+<table width="100%" summary="Navigation header">
+<tr><th colspan="3" align="center">部分 IV. 常见问题</th></tr>
+<tr>
+<td width="20%" align="left">
+<a accesskey="p" href="others.html">上一页</a> </td>
+<th width="60%" align="center"> </th>
+<td width="20%" align="right"> <a accesskey="n" href="thanks.html">下一页</a>
+</td>
+</tr>
+</table>
+<hr>
+</div>
+<div class="part" title="部分 IV. 常见问题">
+<div class="titlepage"><div><div><h1 class="title">
+<a name="faq"></a>部分 IV. 常见问题</h1></div></div></div>
+<div class="qandaset" title="常见问题">
+<a name="id14838716"></a><dl>
+<dt>1. <a href="faq.html#X11-not-found">编译时说找不到文件X11/Xlib.h</a>
+</dt>
+<dt>2. <a href="faq.html#ctrl_space">编译安装完成后，按ctrl_space无法打开fcitx的输入条啊？</a>
+</dt>
+<dt>3. <a href="faq.html#color">界面的颜色怎么那么难看？</a>
+</dt>
+<dt>4. <a href="faq.html#gnome-auto-start-slow">我将fcitx加到gnome的自动启动后，gnome怎么启动那么慢？</a>
+</dt>
+<dt>5. <a href="faq.html#fcitx-load-code-table">为什么有时候fcitx会卡几秒？</a>
+</dt>
+<dt>6. <a href="faq.html#duplicate-characters">为什么我只按了一个键，输入条上却出现两个相同的字符？</a>
+</dt>
+<dt>7. <a href="faq.html#en_US.UTF-8">当我使用en_US.UTF-8时，为什么无法激活fcitx？</a>
+</dt>
+<dt>8. <a href="faq.html#default-fonts-is-not-my-common-use">fcitx的默认字体并不是我常用字体</a>
+</dt>
+<dt>9. <a href="faq.html#compositing_manager">有些皮肤周围为什么有不透明的黑边</a>
+</dt>
+<dt>10. <a href="faq.html#background-is-black">fcitx启动后图标背景为黑色，但关闭后手动启动背景颜色正常</a>
+</dt>
+<dt>11. <a href="faq.html#firefox-first-letter">有时Firefox中输入的第一个字母会丢失</a>
+</dt>
+<dt>12. <a href="faq.html#follow-cursor">fcitx在某些的程序中无法光标跟随/光标跟随存在问题</a>
+</dt>
+<dt>13. <a href="faq.html#does-not-work-in-adobe-flash">在flash中无法输入</a>
+</dt>
+<dt>14. <a href="faq.html#i-am-not-satisfy-pymb">我对于fcitx拼音词库很不满</a>
+</dt>
+<dt>15. <a href="faq.html#kde4-kimpanel-problem">我是kde4用户，kimpanel的问题太多了，可是我又想界面协调</a>
+</dt>
+<dt>16. <a href="faq.html#jp-mb">我想输入日语怎么办？</a>
+</dt>
+<dt>17. <a href="faq.html#emotion-charactors">我想输入颜文字</a>
+</dt>
+<dt>18. <a href="faq.html#vnc-nomachine">我在使用vnc/nomachine远程连接时，fcitx好像不太好使？</a>
+</dt>
+<dt>19. <a href="faq.html#report-issue">我发现了 fcitx 的 bug 怎么办？</a>
+</dt>
+</dl>
+<table border="0" width="100%" summary="Q and A Set">
+<col align="left" width="1%">
+<col>
+<tbody>
+<tr class="question" title="1.">
+<td align="left" valign="top">
+<a name="X11-not-found"></a><a name="id14996162"></a><p><b>1.</b></p>
+</td>
+<td align="left" valign="top"><p>编译时说找不到文件X11/Xlib.h</p></td>
+</tr>
+<tr class="answer">
+<td align="left" valign="top"></td>
+<td align="left" valign="top"><p>这个信息是说编译程序没有找到X的头文件，一般是因为您没有安装X的开发包（在RH/MDK中名为XF*-devel-*或xorg-*-devel-*）。</p></td>
+</tr>
+<tr class="question" title="2.">
+<td align="left" valign="top">
+<a name="ctrl_space"></a><a name="id14996179"></a><p><b>2.</b></p>
+</td>
+<td align="left" valign="top"><p>编译安装完成后，按ctrl_space无法打开fcitx的输入条啊？</p></td>
+</tr>
+<tr class="answer">
+<td align="left" valign="top"></td>
+<td align="left" valign="top">
+<p>这个的原因有很多。你可能需要一一排查以下情况：
+				</p>
+<div class="itemizedlist"><ul class="itemizedlist" type="disc">
+<li class="listitem">如果其他程序可以成功使用fcitx，那么也许是ctrl space的快捷键被抢占了，想办法设置保证不冲突。</li>
+<li class="listitem">如果所有程序都无法正常启用fcitx，请参看说明文档的“环境配置”部分。</li>
+<li class="listitem">如果仍然有问题，那么也许是你的locale设置有问题，在某些系统上，默认的locale可能是<code class="code">C</code>或者<code class="code">POSIX</code>，如果你仍然想使用英文界面，应当将locale设置为<code class="code">en_US.UTF-8</code>。
+					<code class="code">en_US.UTF-8</code>的gtk程序默认不会使用xim，一定要设置GTK_IM_MODULE，否则只能每次右键选择。</li>
+</ul></div>
+<p>
+				如果还有问题，请给fcitx的googlegroup写信。
+			</p>
+</td>
+</tr>
+<tr class="question" title="3.">
+<td align="left" valign="top">
+<a name="color"></a><a name="id14839004"></a><p><b>3.</b></p>
+</td>
+<td align="left" valign="top"><p>界面的颜色怎么那么难看？</p></td>
+</tr>
+<tr class="answer">
+<td align="left" valign="top"></td>
+<td align="left" valign="top"><p>我们也这么认为。但不知道什么样的颜色搭配才好。您可以根据说明文档自己设置颜色，更改字体的大小。</p></td>
+</tr>
+<tr class="question" title="4.">
+<td align="left" valign="top">
+<a name="gnome-auto-start-slow"></a><a name="id14839021"></a><p><b>4.</b></p>
+</td>
+<td align="left" valign="top"><p>我将fcitx加到gnome的自动启动后，gnome怎么启动那么慢？</p></td>
+</tr>
+<tr class="answer">
+<td align="left" valign="top"></td>
+<td align="left" valign="top"><p>把<code class="filename">~/.gnome2/session-manual</code>里面0,Priority=31的31换成50即可。</p></td>
+</tr>
+<tr class="question" title="5.">
+<td align="left" valign="top">
+<a name="fcitx-load-code-table"></a><a name="id14839043"></a><p><b>5.</b></p>
+</td>
+<td align="left" valign="top"><p>为什么有时候fcitx会卡几秒？</p></td>
+</tr>
+<tr class="answer">
+<td align="left" valign="top"></td>
+<td align="left" valign="top"><p>fcitx是在第一次输入时读入码表，如果码表比较大的话，读入的时间可能会比较久一些，感觉有些卡，但后面输入就不会再有这种现象了（如果切换了输入法的话，切换后的第一次输入也会重新读入码表）。</p></td>
+</tr>
+<tr class="question" title="6.">
+<td align="left" valign="top">
+<a name="duplicate-characters"></a><a name="id14839061"></a><p><b>6.</b></p>
+</td>
+<td align="left" valign="top"><p>为什么我只按了一个键，输入条上却出现两个相同的字符？</p></td>
+</tr>
+<tr class="answer">
+<td align="left" valign="top"></td>
+<td align="left" valign="top"><p>这种情况一般出现在KDE中。应该是QT的XIM支持出现问题。出现这个现象时，请在窗口管理器的标题栏按鼠标右键弹出系统菜单，然后按ctrl_space关闭输入法，重新回到应用程序就可以了。</p></td>
+</tr>
+<tr class="question" title="7.">
+<td align="left" valign="top">
+<a name="en_US.UTF-8"></a><a name="id14839078"></a><p><b>7.</b></p>
+</td>
+<td align="left" valign="top"><p>当我使用en_US.UTF-8时，为什么无法激活fcitx？</p></td>
+</tr>
+<tr class="answer">
+<td align="left" valign="top"></td>
+<td align="left" valign="top">
+<p>这种情况应该是GTK2的应用程序。当locale为en_US.UTF-8时。GTK2默认的输入模块不是XIM，因此无法激活fcitx。此时在文字输入框中按鼠标右键，把Input
+				Method设置为X input
+				method，然后就可以使用fcitx了。比较好的解决方法是，
+				在<code class="filename">~/.bash_profile</code>或者<code class="filename">~/.xprofile</code>中加入以下两行：
+</p>
+<pre class="programlisting">
+export GTK_IM_MODULE=xim
+export XMODIFIERS="@im=fcitx"
+</pre>
+<p>
+				</p>
+</td>
+</tr>
+<tr class="question" title="8.">
+<td align="left" valign="top">
+<a name="default-fonts-is-not-my-common-use"></a><a name="id14839110"></a><p><b>8.</b></p>
+</td>
+<td align="left" valign="top"><p>fcitx的默认字体并不是我常用字体</p></td>
+</tr>
+<tr class="answer">
+<td align="left" valign="top"></td>
+<td align="left" valign="top"><p>由于fcitx并没有使用一些高层的字体处理，默认字体仅仅是利用Fontconfig找到的一个系统当中的中文字体（并无优先级关系，也不服从<code class="filename">/etc/fonts.conf</code>）。
+				可以通过配置文件指定具体的字体解决。或者你应该考虑编译时enable-pango，这样字体设置就有更好的支持了。</p></td>
+</tr>
+<tr class="question" title="9.">
+<td align="left" valign="top">
+<a name="compositing_manager"></a><a name="id14839405"></a><p><b>9.</b></p>
+</td>
+<td align="left" valign="top"><p>有些皮肤周围为什么有不透明的黑边</p></td>
+</tr>
+<tr class="answer">
+<td align="left" valign="top"></td>
+<td align="left" valign="top">
+<p>由于Xserver需要可以支持混成的窗口管理器才能处理真透明效果，因此需要对窗口管理器本身进行设置。相应的开启混成之后会消耗更多的CPU和GPU性能，因此是否开启这个效果请自己权衡。</p>
+<p>分为以下情况：</p>
+<div class="orderedlist"><ol class="orderedlist" type="1">
+<li class="listitem">
+<p>Gnome</p>
+<p>Metacity可以支持混成，但由于不是所有的显卡和驱动程序都能很好地支持混成，因此混成在gnome中默认是未开启的。如果你的显卡和驱动程序支持3D加速，则可以开启之。</p>
+<p>使用gconf-editor进行编辑，编辑<code class="code">/apps/metacity/general/compositing_manager</code>，设置为真即可。</p>
+<p>或者直接使用下面的命令启用：</p>
+<pre class="synopsis">gconftool-2 -s --type bool /apps/metacity/general/compositing_manager true</pre>
+<p>如果你想禁用它，修改“true”为“false”，并重新执行该命令。</p>
+</li>
+<li class="listitem">
+<p>KDE4</p>
+<p>Kwin可以支持混成，在系统设置，桌面效果内设置。</p>
+</li>
+<li class="listitem">
+<p>XFCE</p>
+<p>Xfwm4支持混成，在高级窗口管理器内进行设置。</p>
+</li>
+<li class="listitem">
+<p>Compiz</p>
+<p>Compiz &gt;= 0.9.0可能默认没有开启混成，可以通过安装ccsm进行配置。</p>
+</li>
+<li class="listitem">
+<p>其他</p>
+<p>其他窗口管理器可以通过一个额外的混成管理器xcompmgr进行混成管理。只需要安装它即可。另外也可以将之前所述的窗口管理器在不开启混成的情形下同时使用xcompmgr，但相应的可能不如原生的效果那么好。</p>
+</li>
+</ol></div>
+</td>
+</tr>
+<tr class="question" title="10.">
+<td align="left" valign="top">
+<a name="background-is-black"></a><a name="id14839568"></a><p><b>10.</b></p>
+</td>
+<td align="left" valign="top"><p>fcitx启动后图标背景为黑色，但关闭后手动启动背景颜色正常</p></td>
+</tr>
+<tr class="answer">
+<td align="left" valign="top"></td>
+<td align="left" valign="top"><p>你可以通过设置DelayStart延迟几秒启动fcitx，在支持混成的窗口管理器和面板启动之后再启动fcitx。</p></td>
+</tr>
+<tr class="question" title="11.">
+<td align="left" valign="top">
+<a name="firefox-first-letter"></a><a name="id14839585"></a><p><b>11.</b></p>
+</td>
+<td align="left" valign="top"><p>有时Firefox中输入的第一个字母会丢失</p></td>
+</tr>
+<tr class="answer">
+<td align="left" valign="top"></td>
+<td align="left" valign="top"><p>我们确认存在这个问题。也许在实现了gtk-im-module之后这类问题会得到改善。</p></td>
+</tr>
+<tr class="question" title="12.">
+<td align="left" valign="top">
+<a name="follow-cursor"></a><a name="id14851892"></a><p><b>12.</b></p>
+</td>
+<td align="left" valign="top"><p>fcitx在某些的程序中无法光标跟随/光标跟随存在问题</p></td>
+</tr>
+<tr class="answer">
+<td align="left" valign="top"></td>
+<td align="left" valign="top"><p>这是这些程序在实现xim的时候并没有提示光标在哪里的缘故，所有使用xim的输入法都会有这样的问题，而不是只有fcitx。现在fcitx对于这些窗口的处理就是现实在这个窗口的下方。这时你可以拖动fcitx的输入窗口到你想要的位置上继续输入，在关闭这个程序之前，fcitx会记住你拖动的位置。 </p></td>
+</tr>
+<tr class="question" title="13.">
+<td align="left" valign="top">
+<a name="does-not-work-in-adobe-flash"></a><a name="id14851909"></a><p><b>13.</b></p>
+</td>
+<td align="left" valign="top"><p>在flash中无法输入</p></td>
+</tr>
+<tr class="answer">
+<td align="left" valign="top"></td>
+<td align="left" valign="top"><p>我们对于adobe的做法倍感疑惑，在10.0.45.2这个版本，fcitx是可以正常输入的。但是升级之后却又出了问题。不过既然使用gtk-im- module的输入法可以支持flash了，那么在fcitx实现了gtk-im-module之后，这个问题也应该可以解决。 </p></td>
+</tr>
+<tr class="question" title="14.">
+<td align="left" valign="top">
+<a name="i-am-not-satisfy-pymb"></a><a name="id14851926"></a><p><b>14.</b></p>
+</td>
+<td align="left" valign="top"><p>我对于fcitx拼音词库很不满</p></td>
+</tr>
+<tr class="answer">
+<td align="left" valign="top"></td>
+<td align="left" valign="top">
+<p>
+			有两个折中的解决方案。
+				</p>
+<div class="orderedlist"><ol class="orderedlist" type="1">
+<li class="listitem">
+						利用createPYMB创建自己的词库，放在~/.config/fcitx/pinyin下面。
+					</li>
+<li class="listitem">
+						尝试fcitx-sunpinyin，sunpinyin是一个基于语言模型的pinyin开源输入法项目，对于整句输入有很大提升。
+					</li>
+</ol></div>
+<p> 
+			</p>
+</td>
+</tr>
+<tr class="question" title="15.">
+<td align="left" valign="top">
+<a name="kde4-kimpanel-problem"></a><a name="id14851955"></a><p><b>15.</b></p>
+</td>
+<td align="left" valign="top"><p>我是kde4用户，kimpanel的问题太多了，可是我又想界面协调</p></td>
+</tr>
+<tr class="answer">
+<td align="left" valign="top"></td>
+<td align="left" valign="top"><p>你可以尝试这里的小工具<a class="ulink" href="http://csslayer.tk/wordpress/fcitx%E5%BC%80%E5%8F%91/fcitx-skingenerator/" target="_top">http://csslayer.tk/wordpress/fcitx开发/fcitx-skingenerator/</a></p></td>
+</tr>
+<tr class="question" title="16.">
+<td align="left" valign="top">
+<a name="jp-mb"></a><a name="id14851978"></a><p><b>16.</b></p>
+</td>
+<td align="left" valign="top"><p>我想输入日语怎么办？</p></td>
+</tr>
+<tr class="answer">
+<td align="left" valign="top"></td>
+<td align="left" valign="top"><p>你可以尝试这里：<a class="ulink" href="http://forum.ubuntu.org.cn/viewtopic.php?f=8&amp;t=290712&amp;start=0" target="_top">http://forum.ubuntu.org.cn/viewtopic.php?f=8&amp;t=290712&amp;start=0</a> 5楼的码表。 或者请等待基于anthy的fcitx的输入法wrapper，这个项目目前在计划中。 </p></td>
+</tr>
+<tr class="question" title="17.">
+<td align="left" valign="top">
+<a name="emotion-charactors"></a><a name="id14852002"></a><p><b>17.</b></p>
+</td>
+<td align="left" valign="top"><p>我想输入颜文字</p></td>
+</tr>
+<tr class="answer">
+<td align="left" valign="top"></td>
+<td align="left" valign="top"><p>fcitx的QuickPhrase?在你有想象力的前提下，可以发挥很多功能，例如用来输入颜文字，例如用来根据Latex的标记输入特殊符号。 </p></td>
+</tr>
+<tr class="question" title="18.">
+<td align="left" valign="top">
+<a name="vnc-nomachine"></a><a name="id14852019"></a><p><b>18.</b></p>
+</td>
+<td align="left" valign="top"><p>我在使用vnc/nomachine远程连接时，fcitx好像不太好使？</p></td>
+</tr>
+<tr class="answer">
+<td align="left" valign="top"></td>
+<td align="left" valign="top"><p>vnc下fcitx似乎确实有问题，但我们尚未验证是否这是基于xim的通病。
+
+nomachine/nx下是没有问题的，不过由于你可能是使用windows进行远程连接，那么ctrl+space会被windows的输入法抢走而不会传递到远程的计算机上，你可以考虑将fcitx 的输入法切换快捷键设置为shift+space。在linux的nx客户端没有问题。 </p></td>
+</tr>
+<tr class="question" title="19.">
+<td align="left" valign="top">
+<a name="report-issue"></a><a name="id14852037"></a><p><b>19.</b></p>
+</td>
+<td align="left" valign="top"><p>我发现了 fcitx 的 bug 怎么办？</p></td>
+</tr>
+<tr class="answer">
+<td align="left" valign="top"></td>
+<td align="left" valign="top"><div class="orderedlist"><ol class="orderedlist" type="1">
+<li class="listitem">确认你发现的问题不在<a class="link" href="faq.html" title="部分 IV. 常见问题">常见问题</a>列表里。</li>
+<li class="listitem">
+					在 <a class="ulink" href="http://code.google.com/p/fcitx/issues/list" target="_top">Issues</a> 中查询，
+					确认尚未有人报告该问题；
+					如果已经有人报告了该问题，
+					但是你想补充更多信息，
+					可以回复进行补充。
+				</li>
+<li class="listitem">
+<p>如果确认了不是已知问题，那么不必拘束，在 <a class="ulink" href="http://code.google.com/p/fcitx/issues/list" target="_top">Issues</a>
+						中 New issue 提交 bug 的详细情况，我们将尽快确认。
+					</p>
+<p>
+						如果是导致 fcitx 退出的错误，
+						你可以查看 <code class="filename">~/.config/fcitx/crash.log</code> 中是否有相关信息，
+						同时将这个信息和你的 fcitx 已经编译的二进制文件发上来。
+					</p>
+</li>
+</ol></div></td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="navfooter">
+<hr>
+<table width="100%" summary="Navigation footer">
+<tr>
+<td width="40%" align="left">
+<a accesskey="p" href="others.html">上一页</a> </td>
+<td width="20%" align="center"> </td>
+<td width="40%" align="right"> <a accesskey="n" href="thanks.html">下一页</a>
+</td>
+</tr>
+<tr>
+<td width="40%" align="left" valign="top">第 11 章 其它功能 </td>
+<td width="20%" align="center"><a accesskey="h" href="index.html">起始页</a></td>
+<td width="40%" align="right" valign="top"> 部分 V. 致谢</td>
+</tr>
+</table>
+</div>
+</body>
+</html>

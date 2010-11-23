@@ -1,80 +1,109 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN"
-	"http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
-
-<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<html>
 <head>
-	<meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
-
-	<title>fcitx/handbook @ GitHub</title>
-	
-	<style type="text/css">
-		body {
-  		margin-top: 1.0em;
-  		background-color: #011222;
-		  font-family: "Helvetica,Arial,FreeSans";
-  		color: #ffffff;
-    }
-    #container {
-      margin: 0 auto;
-      width: 700px;
-    }
-		h1 { font-size: 3.8em; color: #feeddd; margin-bottom: 3px; }
-		h1 .small { font-size: 0.4em; }
-		h1 a { text-decoration: none }
-		h2 { font-size: 1.5em; color: #feeddd; }
-    h3 { text-align: center; color: #feeddd; }
-    a { color: #feeddd; }
-    .description { font-size: 1.2em; margin-bottom: 30px; margin-top: 30px; font-style: italic;}
-    .download { float: right; }
-		pre { background: #000; color: #fff; padding: 15px;}
-    hr { border: 0; width: 80%; border-bottom: 1px solid #aaa}
-    .footer { text-align:center; padding-top:30px; font-style: italic; }
-	</style>
-	
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>小企鹅输入法（fcitx）</title>
+<link rel="stylesheet" href="docbook.css" type="text/css">
+<meta name="generator" content="DocBook XSL Stylesheets V1.75.2">
+<meta name="description" content="小企鹅中文输入法（Free Chinese Input Toy for X，fcitx） 是一个以GPL方式发布的XIM简体中文输入法， 编写它的目是为X桌面环境提供一个轻量级、 尽量少依赖其它库的简体中文输入方案。">
+<link rel="home" href="index.html" title="小企鹅输入法（fcitx）">
+<link rel="next" href="glossary.html" title="术语表">
 </head>
-
-<body>
-  <a href="http://github.com/fcitx/handbook"><img style="position: absolute; top: 0; right: 0; border: 0;" src="http://s3.amazonaws.com/github/ribbons/forkme_right_darkblue_121621.png" alt="Fork me on GitHub" /></a>
-
-  <div id="container">
-
-    <div class="download">
-      <a href="http://github.com/fcitx/handbook/zipball/master">
-        <img border="0" width="90" src="http://github.com/images/modules/download/zip.png"></a>
-      <a href="http://github.com/fcitx/handbook/tarball/master">
-        <img border="0" width="90" src="http://github.com/images/modules/download/tar.png"></a>
-    </div>
-
-    <h1><a href="http://github.com/fcitx/handbook">handbook</a>
-      <span class="small">by <a href="http://github.com/fcitx">fcitx</a></span></h1>
-
-    <div class="description">
-      
-    </div>
-
-    <h2>Authors</h2>
-<p>Sutra Zhou (zhoushuqun@gmail.com)<br/><br/>      </p>
-<h2>Contact</h2>
-<p> (fcitx-dev@googlegroups.com)<br/>      </p>
-
-
-    <h2>Download</h2>
-    <p>
-      You can download this project in either
-      <a href="http://github.com/fcitx/handbook/zipball/master">zip</a> or
-      <a href="http://github.com/fcitx/handbook/tarball/master">tar</a> formats.
-    </p>
-    <p>You can also clone the project with <a href="http://git-scm.com">Git</a>
-      by running:
-      <pre>$ git clone git://github.com/fcitx/handbook</pre>
-    </p>
-
-    <div class="footer">
-      get the source code on GitHub : <a href="http://github.com/fcitx/handbook">fcitx/handbook</a>
-    </div>
-
-  </div>
-
-  
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<div class="navheader">
+<table width="100%" summary="Navigation header">
+<tr><th colspan="3" align="center">小企鹅输入法（fcitx）</th></tr>
+<tr>
+<td width="20%" align="left"> </td>
+<th width="60%" align="center"> </th>
+<td width="20%" align="right"> <a accesskey="n" href="glossary.html">下一页</a>
+</td>
+</tr>
+</table>
+<hr>
+</div>
+<div lang="zh-CN" class="book" title="小企鹅输入法（fcitx）">
+<div class="titlepage">
+<div>
+<div><h1 class="title">
+<a name="id14821014"></a>小企鹅输入法（fcitx）</h1></div>
+<div><p class="copyright">版权 © 2005, 2006, 2007, 2008, 2009, 2010 Yuking</p></div>
+<div><div class="abstract" title="摘要">
+<p class="title"><b>摘要</b></p>
+<p>小企鹅中文输入法（Free Chinese Input Toy for X，fcitx）
+				是一个以GPL方式发布的XIM简体中文输入法，
+				编写它的目是为X桌面环境提供一个轻量级、
+				尽量少依赖其它库的简体中文输入方案。</p>
+</div></div>
+</div>
+<hr>
+</div>
+<div class="toc">
+<p><b>目录</b></p>
+<dl>
+<dt><span class="glossary"><a href="glossary.html">术语表</a></span></dt>
+<dt><span class="part"><a href="introduction.html">I. 软件概述</a></span></dt>
+<dt><span class="part"><a href="installation.html">II. 安装配置</a></span></dt>
+<dd><dl>
+<dt><span class="chapter"><a href="install.html">1. 安装</a></span></dt>
+<dd><dl>
+<dt><span class="sect1"><a href="install.html#source">1.1. 从源代码安装</a></span></dt>
+<dt><span class="sect1"><a href="package.html">1.2. 从预编译包安装</a></span></dt>
+</dl></dd>
+<dt><span class="chapter"><a href="config-env.html">2. 配置环境变量</a></span></dt>
+<dt><span class="chapter"><a href="autostart.html">3. 跟随桌面环境自动启动</a></span></dt>
+<dt><span class="chapter"><a href="config.html">4. 配置文件说明</a></span></dt>
+</dl></dd>
+<dt><span class="part"><a href="functions.html">III. 功能说明</a></span></dt>
+<dd><dl>
+<dt><span class="chapter"><a href="input-methods.html">5. 输入法</a></span></dt>
+<dd><dl>
+<dt><span class="sect1"><a href="input-methods.html#pinyin">5.1. 拼音输入法</a></span></dt>
+<dd><dl>
+<dt><span class="sect2"><a href="input-methods.html#id14839969">5.1.1. 常用字表</a></span></dt>
+<dt><span class="sect2"><a href="input-methods.html#id14840003">5.1.2. 双拼输入</a></span></dt>
+<dt><span class="sect2"><a href="input-methods.html#id14905940">5.1.3. 以词定字</a></span></dt>
+<dt><span class="sect2"><a href="input-methods.html#id14905953">5.1.4. 特殊符号输入</a></span></dt>
+<dt><span class="sect2"><a href="input-methods.html#id14908386">5.1.5. 制作拼音库</a></span></dt>
+</dl></dd>
+<dt><span class="sect1"><a href="quwei.html">5.2. 区位输入法</a></span></dt>
+<dt><span class="sect1"><a href="code-table.html">5.3. 码表输入法</a></span></dt>
+<dd><dl>
+<dt><span class="sect2"><a href="code-table.html#id14953523">5.3.1. 制作码表</a></span></dt>
+<dt><span class="sect2"><a href="code-table.html#id14986011">5.3.2. 反查拼音</a></span></dt>
+</dl></dd>
+</dl></dd>
+<dt><span class="chapter"><a href="chinese-punctuation.html">6. 中文标点</a></span></dt>
+<dt><span class="chapter"><a href="quick-phrase.html">7. 快速输入</a></span></dt>
+<dt><span class="chapter"><a href="system-tray-icon.html">8. 系统托盘图标</a></span></dt>
+<dt><span class="chapter"><a href="record.html">9. 记录模式</a></span></dt>
+<dt><span class="chapter"><a href="skin.html">10. 皮肤</a></span></dt>
+<dt><span class="chapter"><a href="others.html">11. 其它功能</a></span></dt>
+</dl></dd>
+<dt><span class="part"><a href="faq.html">IV. 常见问题</a></span></dt>
+<dt><span class="part"><a href="thanks.html">V. 致谢</a></span></dt>
+<dt><span class="part"><a href="appendix.html">VI. 附录</a></span></dt>
+<dd><dl>
+<dt><span class="chapter"><a href="hot-key.html">12. 热键</a></span></dt>
+<dt><span class="chapter"><a href="compile.html">13. 编译安装流程</a></span></dt>
+</dl></dd>
+</dl>
+</div>
+</div>
+<div class="navfooter">
+<hr>
+<table width="100%" summary="Navigation footer">
+<tr>
+<td width="40%" align="left"> </td>
+<td width="20%" align="center"> </td>
+<td width="40%" align="right"> <a accesskey="n" href="glossary.html">下一页</a>
+</td>
+</tr>
+<tr>
+<td width="40%" align="left" valign="top"> </td>
+<td width="20%" align="center"> </td>
+<td width="40%" align="right" valign="top"> 术语表</td>
+</tr>
+</table>
+</div>
 </body>
 </html>

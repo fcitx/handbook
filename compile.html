@@ -1,0 +1,81 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>第 13 章 编译安装流程</title>
+<link rel="stylesheet" href="docbook.css" type="text/css">
+<meta name="generator" content="DocBook XSL Stylesheets V1.75.2">
+<link rel="home" href="index.html" title="小企鹅输入法（fcitx）">
+<link rel="up" href="appendix.html" title="部分 VI. 附录">
+<link rel="prev" href="hot-key.html" title="第 12 章 热键">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<div class="navheader">
+<table width="100%" summary="Navigation header">
+<tr><th colspan="3" align="center">第 13 章 编译安装流程</th></tr>
+<tr>
+<td width="20%" align="left">
+<a accesskey="p" href="hot-key.html">上一页</a> </td>
+<th width="60%" align="center">部分 VI. 附录</th>
+<td width="20%" align="right"> </td>
+</tr>
+</table>
+<hr>
+</div>
+<div class="chapter" title="第 13 章 编译安装流程">
+<div class="titlepage"><div><div><h2 class="title">
+<a name="compile"></a>第 13 章 编译安装流程</h2></div></div></div>
+<p>fcitx 通常以源码的方式发布，您需要编译安装后才能使用。编译 fcitx 需要（且不限于）以下包：</p>
+<div class="itemizedlist"><ul class="itemizedlist" type="disc">
+<li class="listitem"><p>gcc</p></li>
+<li class="listitem"><p>xorg 及其开发包</p></li>
+<li class="listitem"><p>cairo 及其开发包</p></li>
+<li class="listitem"><p>gettext 及其开发包</p></li>
+<li class="listitem"><p>libtool</p></li>
+<li class="listitem"><p>intltool</p></li>
+</ul></div>
+<p>首先下载 fcitx 的源码包，文件名为 fcitx-4.0.0.tar.bz2，存放在某个临时的目录中（如 <code class="filename">/temp</code> ）。执行：</p>
+<pre class="synopsis">
+		cd &lt;临时目录&gt;
+		tar jxvf fcitx-4.0.0.tar.bz2
+	</pre>
+<p>这样会在临时目录（如 <code class="filename">/temp</code> ）目录下建立目录 fcitx-4.0.0，所有的源码都在该目录中。</p>
+<p>执行以下命令编译安装：</p>
+<pre class="synopsis">
+		cd fcitx-4.0.0
+		./configure -prefix=&lt;安装目录&gt;
+		make &amp;&amp; make install
+	</pre>
+<p>bash编译安装时的偏好设定：</p>
+<p>这些设定是非必需的，如果有需要可自行添加。</p>
+<div class="variablelist" title="./configure 选项">
+<p class="title"><b>./configure 选项</b></p>
+<dl>
+<dt><span class="term">--disable-tray</span></dt>
+<dd><p>fcitx 支持系统托盘，默认情况下该功能是启用的，如果您不希望打开该功能，可在 ./configure 后增加选项 --disable-tray。</p></dd>
+<dt><span class="term">--enable-recording</span></dt>
+<dd><p>在 ./configure 后增加选项 --enable-recording 将打开 fcitx 的输入记录功能（参见<a class="link" href="record.html" title="第 9 章 记录模式">输入记录</a>）。</p></dd>
+<dt><span class="term">--enable-dbus</span></dt>
+<dd><p>在 configure 时增加选项 --enable-dbus 将打开 fcitx 的 DBus 支持，此时如果您的系统中安装了 kimpanel，kimpanel 将接管 fcitx 的用户界面（需要与配置文件中的设置“使用 DBus 接口”配合使用）。</p></dd>
+<dt><span class="term">--disable-pango</span></dt>
+<dd><p>在 configure 时增加选项 --disable-pango，将不使用 pango 进行字体绘制，将只能支持单一字体显示（在字符集不足时）。</p></dd>
+</dl>
+</div>
+</div>
+<div class="navfooter">
+<hr>
+<table width="100%" summary="Navigation footer">
+<tr>
+<td width="40%" align="left">
+<a accesskey="p" href="hot-key.html">上一页</a> </td>
+<td width="20%" align="center"><a accesskey="u" href="appendix.html">上一级</a></td>
+<td width="40%" align="right"> </td>
+</tr>
+<tr>
+<td width="40%" align="left" valign="top">第 12 章 热键 </td>
+<td width="20%" align="center"><a accesskey="h" href="index.html">起始页</a></td>
+<td width="40%" align="right" valign="top"> </td>
+</tr>
+</table>
+</div>
+</body>
+</html>
