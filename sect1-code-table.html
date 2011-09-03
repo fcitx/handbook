@@ -1,0 +1,168 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>5.3. 码表输入法</title>
+<link rel="stylesheet" href="docbook.css" type="text/css">
+<meta name="generator" content="DocBook XSL Stylesheets V1.75.2">
+<link rel="home" href="index.html" title="小企鹅输入法（fcitx）">
+<link rel="up" href="chapter-input-methods.html" title="第 5 章 输入法">
+<link rel="prev" href="sect1-quwei.html" title="5.2. 区位输入法">
+<link rel="next" href="chinese-punctuation.html" title="第 6 章 中文标点">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<div class="navheader">
+<table width="100%" summary="Navigation header">
+<tr><th colspan="3" align="center">5.3. 码表输入法</th></tr>
+<tr>
+<td width="20%" align="left">
+<a accesskey="p" href="sect1-quwei.html">上一页</a> </td>
+<th width="60%" align="center">第 5 章 输入法</th>
+<td width="20%" align="right"> <a accesskey="n" href="chinese-punctuation.html">下一页</a>
+</td>
+</tr>
+</table>
+<hr>
+</div>
+<div class="sect1" title="5.3. 码表输入法">
+<div class="titlepage"><div><div><h2 class="title" style="clear: both">
+<a name="sect1-code-table"></a>5.3. 码表输入法</h2></div></div></div>
+<p>fcitx支持用户自定义码表输入法。</p>
+<p>系统的码表放置在prefix/share/fcitx/data/table/*.conf，
+	用户的码表和配置放置在<code class="filename">~/.config/fcitx/table/*.conf</code></p>
+<p>该文件用“[CodeTable]”来区分不同的码表。其它设置说明如下：</p>
+<div class="itemizedlist"><ul class="itemizedlist" type="disc"><li class="listitem">
+<p>[CodeTable]</p>
+<div class="itemizedlist"><ul class="itemizedlist" type="circle">
+<li class="listitem"><p>Name：名称，显示在程序主窗口的输入法名称。</p></li>
+<li class="listitem"><p>IconName：图标名称，皮肤中对应图标文件名。</p></li>
+<li class="listitem"><p>File：码表文件，该码表输入法的码表文件名，程序会先查找
+					<code class="filename">~/.config/fcitx/table</code>，然后在安装目录中找。</p></li>
+<li class="listitem"><p>AdjustOrder：调频，与拼音中的相应设置意义一样。</p></li>
+<li class="listitem"><p>Priority：优先级，码表输入法的优先级排序。</p></li>
+<li class="listitem"><p>UsePY：使用拼音，是否使用临时拼音输入。</p></li>
+<li class="listitem"><p>PYKey：拼音键，如果“拼音”选项打开，则以该字母起头的输入按全拼处理。</p></li>
+<li class="listitem"><p>AutoSend：自动上屏，当输入达到最大码表且只有一个候选词时是否自动上屏。</p></li>
+<li class="listitem"><p>NoneMatchAutoSend：空码自动上屏，空码时出空码前的内容。比如说abcd是空码，而abc不是，那么打abcd时，就将abc的内容自动上屏，d留在提示行中待处理。</p></li>
+<li class="listitem"><p>UseMatchingKey：使用模糊键，是否使用模糊(通配符)输入。</p></li>
+<li class="listitem"><p>MatchingKey：模糊键，模糊键(通配符)。</p></li>
+<li class="listitem"><p>AutoPhrase：自动词组，是否使用自动组词功能(后面有详细说明)。</p></li>
+<li class="listitem"><p>AutoPhraseLength：自动词组长度。</p></li>
+<li class="listitem"><p>AutoPhrasePhrase：词组参与自动造词，指定录入的词组是否参与自动组词。</p></li>
+<li class="listitem"><p>SaveAutoPhrase：保存自动词组，设定自动生成的词组被选择多少次后才被保存。0表示不保存。</p></li>
+<li class="listitem"><p>ExactMatch：精确匹配，是否只在候选字表中显示精确匹配的结果。</p></li>
+<li class="listitem"><p>PromptTableCode：提示编码，是否提示录入字/词的编码。</p></li>
+<li class="listitem"><p>Symbol：符号，设置该选项则开启特殊符号输入功能。</p></li>
+<li class="listitem"><p>SymbolFile：符号文件，特殊符号所在的文件。</p></li>
+<li class="listitem"><p>Enabled：是否启用该码表。</p></li>
+</ul></div>
+</li></ul></div>
+<p>码表输入法提供了两种在线造词方法(词组最长为10个汉字)：</p>
+<div class="orderedlist"><ol class="orderedlist" type="1">
+<li class="listitem"><p>
+			在中文输入方式下按CTRL_8，则利用将刚刚输入的内容造词，默认为最近输入法两个字，可以用左右方向键的增加或减少词组中的字数。
+			</p></li>
+<li class="listitem"><p>
+			自动组词：将需要造的词按单字连续输入后，再按它的组词规则连续输入编码，程序会提示用户这个新词。
+			如果此时按空格或它前面的序号则将这个新词输入到用户程序中，您可以设置这个新词是否进入词库。
+			如果不想录入该词，继续进行下一次输入即可(fcitx会记录最近2048个输入的汉字)。
+			</p></li>
+</ol></div>
+<p>如果想删除词库中的词，先让该词显示中输入条上，按CTRL_7，并按提示操作即可；或是当程序提示有该词组时，按CTRL_DEL删除。</p>
+<p>如果想调整词库中词的顺序，按CTRL_6，并按提示操作即可。(如果调频设置为1或2，您可能看不到有什么变化)。</p>
+<div class="sect2" title="5.3.1. 制作码表">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="id4130422"></a>5.3.1. 制作码表</h3></div></div></div>
+<p>data目录下包括制造码表的工具：<span class="command"><strong>txt2mb</strong></span>和<span class="command"><strong>mb2txt</strong></span>。
+		前者是将码表源文件转换为码表输入法所需的格式；后者是将码表文件转换为文本文件。码表源文件格式如下：</p>
+<div class="programlistingco">
+<pre class="programlisting">
+;fcitx 版本 0x03 码表文件
+键码=abcdefghijklmnopqrstuvwxy
+码长=4
+规避字符=;iuv
+拼音=@
+拼音长度=12
+[组词规则]
+e2=p11+p12+p21+p22
+e3=p11+p21+p31+p32
+a4=p11+p21+p31+n11
+[数据]
+a 工
+a 戈
+a 或
+a 其
+@a 阿
+@a 啊
+@a 呵
+			</pre>
+<div class="calloutlist"><table border="0" summary="Callout list">
+<tr>
+<td width="5%" valign="top" align="left"><p><img src="images/callouts/1.png" alt="1" border="0"></p></td>
+<td valign="top" align="left"><p>键码：表示该码表输入法需要用的键；</p></td>
+</tr>
+<tr>
+<td width="5%" valign="top" align="left"><p><img src="images/callouts/2.png" alt="2" border="0"></p></td>
+<td valign="top" align="left"><p>码长：指该码表输入法最长码长；</p></td>
+</tr>
+<tr>
+<td width="5%" valign="top" align="left"><p><img src="images/callouts/3.png" alt="3" border="0"></p></td>
+<td valign="top" align="left"><p>规避字符：在象二笔这样的码表输入法中，某些字符如果出现在编码的第一个，表示特殊用途，虽然可以组成单字，但却不参与组词。如果有这样的字符，可以列在这个地方，以免自动造词出错；</p></td>
+</tr>
+<tr>
+<td width="5%" valign="top" align="left"><p><img src="images/callouts/4.png" alt="4" border="0"></p></td>
+<td valign="top" align="left"><p>拼音：以此字母开头的为拼音；</p></td>
+</tr>
+<tr>
+<td width="5%" valign="top" align="left"><p><img src="images/callouts/5.png" alt="5" border="0"></p></td>
+<td valign="top" align="left"><p>拼音长度：表示该码表中拼音的最长长度；</p></td>
+</tr>
+<tr>
+<td width="5%" valign="top" align="left"><p><img src="images/callouts/6.png" alt="6" border="0"></p></td>
+<td valign="top" align="left">
+<p>[组词规则]：表示自动组词的规则，如果没该标志，则不能在线造词；</p>
+<p>组词规则的数目应该比码长小1。</p>
+<p>等号左边为词组的汉字个数。其中e表示“等于”，a表示“大于等于”(只能有这两个设置)。</p>
+<p>等号右边为规则，其中p指正序，n指逆序。如p11指第一个字的第一个编码，n11则是指最后一个字的第一个编码。</p>
+</td>
+</tr>
+<tr>
+<td width="5%" valign="top" align="left"><p><img src="images/callouts/7.png" alt="7" border="0"></p></td>
+<td valign="top" align="left"><p>[数据]：该标志以下为该码表输入法的数据，按“编码&lt;空格&gt;对应的汉字”。这部分无需排序。</p></td>
+</tr>
+</table></div>
+</div>
+<p>按上述格式制作好编码后，利用<span class="command"><strong>txt2mb</strong></span>将其转换为fcitx需要的格式：</p>
+<div class="cmdsynopsis"><p><code class="command">./txt2mb</code>  {源文件} {目标文件}</p></div>
+<p>然后将目标文件复制到<code class="filename">~/.config/fcitx/table</code>中，
+		并在<code class="filename">~/.config/fcitx/table/</code>中建立对应conf文件，
+		然后在中文输入状态下按CTRL_5重新读入配置文件即可。</p>
+<p>如果希望将已经制作好的码表文件转换为文本文件，可以：</p>
+<div class="cmdsynopsis"><p><code class="command">./mb2txt</code>  {码表文件} [ &gt; 文本文件]</p></div>
+<p>生成的文本文件将形如上述码表源文件的格式。</p>
+<p>在码表输入法模式下，只输入单个“拼音键”指定的字符可以重复上次的录入。</p>
+</div>
+<div class="sect2" title="5.3.2. 反查拼音">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="id4083443"></a>5.3.2. 反查拼音</h3></div></div></div>
+<p>如果不知道某个汉字的读音，可以先用码表输入法录入这个字，然后按反查拼音的热键（默认为CTRL_ALT_E），就可以查到该字的读音。</p>
+</div>
+</div>
+<div class="navfooter">
+<hr>
+<table width="100%" summary="Navigation footer">
+<tr>
+<td width="40%" align="left">
+<a accesskey="p" href="sect1-quwei.html">上一页</a> </td>
+<td width="20%" align="center"><a accesskey="u" href="chapter-input-methods.html">上一级</a></td>
+<td width="40%" align="right"> <a accesskey="n" href="chinese-punctuation.html">下一页</a>
+</td>
+</tr>
+<tr>
+<td width="40%" align="left" valign="top">5.2. 区位输入法 </td>
+<td width="20%" align="center"><a accesskey="h" href="index.html">起始页</a></td>
+<td width="40%" align="right" valign="top"> 第 6 章 中文标点</td>
+</tr>
+</table>
+</div>
+</body>
+</html>

@@ -1,0 +1,76 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>第 9 章 皮肤</title>
+<link rel="stylesheet" href="docbook.css" type="text/css">
+<meta name="generator" content="DocBook XSL Stylesheets V1.75.2">
+<link rel="home" href="index.html" title="小企鹅输入法（fcitx）">
+<link rel="up" href="part-functions.html" title="部分 III. 功能说明">
+<link rel="prev" href="chapter-system-tray-icon.html" title="第 8 章 系统托盘图标">
+<link rel="next" href="chapter-remote.html" title="第 10 章 通过命令控制Fcitx">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<div class="navheader">
+<table width="100%" summary="Navigation header">
+<tr><th colspan="3" align="center">第 9 章 皮肤</th></tr>
+<tr>
+<td width="20%" align="left">
+<a accesskey="p" href="chapter-system-tray-icon.html">上一页</a> </td>
+<th width="60%" align="center">部分 III. 功能说明</th>
+<td width="20%" align="right"> <a accesskey="n" href="chapter-remote.html">下一页</a>
+</td>
+</tr>
+</table>
+<hr>
+</div>
+<div class="chapter" title="第 9 章 皮肤">
+<div class="titlepage"><div><div><h2 class="title">
+<a name="chapter-skin"></a>第 9 章 皮肤</h2></div></div></div>
+<p>fcitx从4.0开始支持皮肤功能，皮肤安装在
+	<code class="filename">~/.config/fcitx/skin</code>（用户目录），
+	和<code class="filename">PREFIX/share/fcitx/skin</code>下面。
+	皮肤的配置需要建立一个目录放置所有相关文件，以及放置一个名为
+	<code class="filename">fcitx_skin.conf</code>的配置文件。
+	如果您需要创建一个新的皮肤，建议参考自带已有的三个皮肤的配置。并使用配置工具帮助配置。
+	</p>
+<p>
+		对于Fcitx皮肤的图片来说，采用了和CSS类似的盒模型，每个图片分为9个区域，边界区域采用距离上，下，左，右的边界的四个值确定。Fcitx的皮肤里面的数字是全部是采用像素作为单位（包括字体大小，以免定位受到dpi的影响）。
+	</p>
+<p>
+		菜单的是完全默认的盒模型，中间区域的大小完全根据菜单内容大大小进行变化修改。
+	</p>
+<p>
+		输入条有两种模式（横，竖）
+	</p>
+<p>
+		在横排模式下，输入条的高度为Margin Top + Margin Bottom + Output Pos，需要注意的是，Output Pos是相对于中间区域的纵坐标，而不是相对于整个输入框的位置。在竖排模式下， Output Pos代表的是第一行左下角的纵坐标的位置。
+	</p>
+<p>
+		主窗口由于其中的按钮个数是可以由插件加入的，因此从4.1之后也开始采用盒模型。默认情况图标保持单排。高度是图标图片中的最大值。对于还想要实现4.0时候不规则的排列的人来说，可以通过Placement这个属性进行设置，规则是：图标名称:横坐标,纵坐标;图标名称:横坐标,纵坐标....每一项之间由分号分隔。没有出现在Placement当中的图标，或者对应图片文件无法加载的图标不会显示。除了输入法图标和logo图标之外，剩下的图标的图片名称是固定的，一律按照“状态名称_active.png” “状态名称_inactive.png”。在Placement中，logo采用的名称是logo，输入法指示图标采用的名称是im。在采用了Placement属性进行布局时，主窗口的大小就是主窗口图片的大小，和Margin（边距）无关。下面是一个Placement的范例。
+	</p>
+<p>
+		Placement=logo:4,30;punc:49,30;chttrans:27,53;fullwidth:20,5;im:45,4
+	</p>
+<p>
+		Fcitx自带的属性图标的名称如下：logo，im，vk，chttrans，punc，fullwidth，legend。
+	</p>
+</div>
+<div class="navfooter">
+<hr>
+<table width="100%" summary="Navigation footer">
+<tr>
+<td width="40%" align="left">
+<a accesskey="p" href="chapter-system-tray-icon.html">上一页</a> </td>
+<td width="20%" align="center"><a accesskey="u" href="part-functions.html">上一级</a></td>
+<td width="40%" align="right"> <a accesskey="n" href="chapter-remote.html">下一页</a>
+</td>
+</tr>
+<tr>
+<td width="40%" align="left" valign="top">第 8 章 系统托盘图标 </td>
+<td width="20%" align="center"><a accesskey="h" href="index.html">起始页</a></td>
+<td width="40%" align="right" valign="top"> 第 10 章 通过命令控制Fcitx</td>
+</tr>
+</table>
+</div>
+</body>
+</html>

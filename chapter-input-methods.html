@@ -1,0 +1,141 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>第 5 章 输入法</title>
+<link rel="stylesheet" href="docbook.css" type="text/css">
+<meta name="generator" content="DocBook XSL Stylesheets V1.75.2">
+<link rel="home" href="index.html" title="小企鹅输入法（fcitx）">
+<link rel="up" href="part-functions.html" title="部分 III. 功能说明">
+<link rel="prev" href="part-functions.html" title="部分 III. 功能说明">
+<link rel="next" href="sect1-quwei.html" title="5.2. 区位输入法">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<div class="navheader">
+<table width="100%" summary="Navigation header">
+<tr><th colspan="3" align="center">第 5 章 输入法</th></tr>
+<tr>
+<td width="20%" align="left">
+<a accesskey="p" href="part-functions.html">上一页</a> </td>
+<th width="60%" align="center">部分 III. 功能说明</th>
+<td width="20%" align="right"> <a accesskey="n" href="sect1-quwei.html">下一页</a>
+</td>
+</tr>
+</table>
+<hr>
+</div>
+<div class="chapter" title="第 5 章 输入法">
+<div class="titlepage"><div><div><h2 class="title">
+<a name="chapter-input-methods"></a>第 5 章 输入法</h2></div></div></div>
+<div class="toc">
+<p><b>目录</b></p>
+<dl>
+<dt><span class="sect1"><a href="chapter-input-methods.html#sect1-pinyin">5.1. 拼音输入法</a></span></dt>
+<dd><dl>
+<dt><span class="sect2"><a href="chapter-input-methods.html#id4039031">5.1.1. 常用字表</a></span></dt>
+<dt><span class="sect2"><a href="chapter-input-methods.html#id4070547">5.1.2. 双拼输入</a></span></dt>
+<dt><span class="sect2"><a href="chapter-input-methods.html#id4053881">5.1.3. 以词定字</a></span></dt>
+<dt><span class="sect2"><a href="chapter-input-methods.html#id4038025">5.1.4. 特殊符号输入</a></span></dt>
+<dt><span class="sect2"><a href="chapter-input-methods.html#id4034073">5.1.5. 制作拼音库</a></span></dt>
+</dl></dd>
+<dt><span class="sect1"><a href="sect1-quwei.html">5.2. 区位输入法</a></span></dt>
+<dt><span class="sect1"><a href="sect1-code-table.html">5.3. 码表输入法</a></span></dt>
+<dd><dl>
+<dt><span class="sect2"><a href="sect1-code-table.html#id4130422">5.3.1. 制作码表</a></span></dt>
+<dt><span class="sect2"><a href="sect1-code-table.html#id4083443">5.3.2. 反查拼音</a></span></dt>
+</dl></dd>
+</dl>
+</div>
+<div class="sect1" title="5.1. 拼音输入法">
+<div class="titlepage"><div><div><h2 class="title" style="clear: both">
+<a name="sect1-pinyin"></a>5.1. 拼音输入法</h2></div></div></div>
+<div class="itemizedlist"><ul class="itemizedlist" type="disc">
+<li class="listitem"><p>支持全/简/双拼，双拼可自定义键盘方案</p></li>
+<li class="listitem"><p>支持常用字表</p></li>
+<li class="listitem"><p>特殊符号输入</p></li>
+<li class="listitem"><p>完善的预编辑</p></li>
+<li class="listitem"><p>支持以词定字</p></li>
+<li class="listitem"><p>模糊拼音</p></li>
+</ul></div>
+<div class="sect2" title="5.1.1. 常用字表">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="id4039031"></a>5.1.1. 常用字表</h3></div></div></div>
+<p>设置常用字表的目的是为了方便录入某些常用字。</p>
+<p>在候选字中，处于该表中的字总是排在其它字的前面。
+		fcitx的默认常用字表是空的。您可以用左ctrl+8/7来添加/删除常用字。
+		例如，您希望录入“d”时，“的”总放在第一个，可以按一下操作：</p>
+<div class="procedure"><ol class="procedure" type="1">
+<li class="step" title="步骤 1"><p>进入拼音状态。</p></li>
+<li class="step" title="步骤 2"><p>输入“d”，用翻页键-=/,.查找“的”字，直到它显示在候选字表中按ctrl+8，
+				然后按“的”前面的数字序号即可。</p></li>
+</ol></div>
+<p>按上述操作可以为某个拼音编码设置多个常用字。您可以设置常用字表内的字频调节方式。 </p>
+</div>
+<div class="sect2" title="5.1.2. 双拼输入">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="id4070547"></a>5.1.2. 双拼输入</h3></div></div></div>
+<p>如果在配置文件中打开双拼选项，即可进行双拼输入。
+		程序默认采用自然码的双拼方案，您也可以自定义键盘方案。
+		如果需要自定义，请将存放双拼方案的文件放在
+		<code class="filename">~/.config/fcitx</code>下并重命名为sp.dat。
+		程序源码包中的data目录下有一个名为sp.dat的文件，该文件已经定义了一些双拼方案，
+		修改“默认方案”即可以使用用户指定的方案。请注意，模糊拼音的设置也会在双拼中生效。</p>
+</div>
+<div class="sect2" title="5.1.3. 以词定字">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="id4053881"></a>5.1.3. 以词定字</h3></div></div></div>
+<p>fcitx支持“以词定字”，以方便录入某些排序比较靠后的字。
+		利用SHIFT_&lt;词组序号&gt;，按以词定字键（默认为'['/']'）选择该词组的第一个或最后一个字。</p>
+<p>比如，在默认设置下，如果需要录入“亥”字，可以输入“jh”，
+		按翻页键让词组“己亥”显示在输入条上，
+		然后按SHIFT_&lt;它前面的序号&gt;，
+		再按‘]’即可(如果按‘[’则是输出“已”字)。</p>
+</div>
+<div class="sect2" title="5.1.4. 特殊符号输入">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="id4038025"></a>5.1.4. 特殊符号输入</h3></div></div></div>
+<p>为了录入特殊符号，您必须将特殊符号按下列格式放在一个文件中：</p>
+<p>&lt;编码&gt; &lt;符号&gt;</p>
+<p>每个符号占一行。
+		编码部分必须是英文小写字母，且经拼音解析后的长度不应超过10个汉字(如zzz是3个汉字长度，
+		而zhangzhangzhang也是3个汉字长度)，
+		fcitx的源码包中有一个例子(文件pySym.mb)。</p>
+<p>编辑好特殊符号后，将其保存为文件pySym.mb，并放在
+		<code class="filename">~/.config/fcitx</code>
+		中，重新启动fcitx即可。</p>
+<p>建议：特殊符号的编码应该足够长，免得影响正常的汉字录入。</p>
+<p>注意：如果定义的编码与常用字表的编码相同，该特殊符号将无法使用。</p>
+<p>如果要录入“西安”这样的词组，请用单引号作为分隔符(xi'an)。</p>
+</div>
+<div class="sect2" title="5.1.5. 制作拼音库">
+<div class="titlepage"><div><div><h3 class="title">
+<a name="id4034073"></a>5.1.5. 制作拼音库</h3></div></div></div>
+<p>在tools目录下提供了一个制作拼音库的工具createPYMB。用法如下：</p>
+<div class="cmdsynopsis"><p><code class="command">./createPYMB</code>  {<em class="replaceable"><code>拼音单字库</code></em>} {<em class="replaceable"><code>拼音词组库</code></em>}</p></div>
+<p>该工具将在当前目录下生成pybase.mb和pyphrase.mb，
+		将它复制到您的fcitx安装目录下的share/fcitx/data中替换原有文件，
+		或者放到<code class="filename">~/.config/fcitx/pinyin</code>
+		（可以重命名，但后缀需要是mb）即可。</p>
+<p>在源码包的data目录下包括了单字库和词组库，文件名为gbkpy.org和pyPhrase.org。
+		它们都是文本文件。一般说来，单字库无需更改，您可以将自己的词组加入到pyPhrase.org中，从而生成自己的词库。</p>
+</div>
+</div>
+</div>
+<div class="navfooter">
+<hr>
+<table width="100%" summary="Navigation footer">
+<tr>
+<td width="40%" align="left">
+<a accesskey="p" href="part-functions.html">上一页</a> </td>
+<td width="20%" align="center"><a accesskey="u" href="part-functions.html">上一级</a></td>
+<td width="40%" align="right"> <a accesskey="n" href="sect1-quwei.html">下一页</a>
+</td>
+</tr>
+<tr>
+<td width="40%" align="left" valign="top">部分 III. 功能说明 </td>
+<td width="20%" align="center"><a accesskey="h" href="index.html">起始页</a></td>
+<td width="40%" align="right" valign="top"> 5.2. 区位输入法</td>
+</tr>
+</table>
+</div>
+</body>
+</html>

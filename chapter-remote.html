@@ -1,0 +1,76 @@
+<html>
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+<title>第 10 章 通过命令控制Fcitx</title>
+<link rel="stylesheet" href="docbook.css" type="text/css">
+<meta name="generator" content="DocBook XSL Stylesheets V1.75.2">
+<link rel="home" href="index.html" title="小企鹅输入法（fcitx）">
+<link rel="up" href="part-functions.html" title="部分 III. 功能说明">
+<link rel="prev" href="chapter-skin.html" title="第 9 章 皮肤">
+<link rel="next" href="others.html" title="第 11 章 其它功能">
+</head>
+<body bgcolor="white" text="black" link="#0000FF" vlink="#840084" alink="#0000FF">
+<div class="navheader">
+<table width="100%" summary="Navigation header">
+<tr><th colspan="3" align="center">第 10 章 通过命令控制Fcitx</th></tr>
+<tr>
+<td width="20%" align="left">
+<a accesskey="p" href="chapter-skin.html">上一页</a> </td>
+<th width="60%" align="center">部分 III. 功能说明</th>
+<td width="20%" align="right"> <a accesskey="n" href="others.html">下一页</a>
+</td>
+</tr>
+</table>
+<hr>
+</div>
+<div class="chapter" title="第 10 章 通过命令控制Fcitx">
+<div class="titlepage"><div><div><h2 class="title">
+<a name="chapter-remote"></a>第 10 章 通过命令控制Fcitx</h2></div></div></div>
+<p>fcitx提供了一个基于socket的工具，fcitx-remote可以用于控制fcitx</p>
+<p>具体命令参数参见fcitx-remote -h 和 man</p>
+<p>一个实用的例子是用它自动控制vim的输入状态</p>
+<pre class="programlisting">
+let g:input_toggle = 1
+function! Fcitx2en()
+   let s:input_status = system("fcitx-remote")
+   if s:input_status == 2
+      let g:input_toggle = 1
+      let l:a = system("fcitx-remote -c")
+   endif
+endfunction
+
+function! Fcitx2zh()
+   let s:input_status = system("fcitx-remote")
+   if s:input_status != 2 &amp;&amp; g:input_toggle == 1
+      let l:a = system("fcitx-remote -o")
+      let g:input_toggle = 0
+   endif
+endfunction
+
+set timeoutlen=150
+autocmd InsertLeave * call Fcitx2en()
+"autocmd InsertEnter * call Fcitx2zh()
+	</pre>
+<p>
+		将上面的代码加入 ~/.vimrc 中，可以实现退出插入模式时自动关闭输入法。去掉最后一行的注释可以实现进入插入模式自动启用输入法。
+	</p>
+</div>
+<div class="navfooter">
+<hr>
+<table width="100%" summary="Navigation footer">
+<tr>
+<td width="40%" align="left">
+<a accesskey="p" href="chapter-skin.html">上一页</a> </td>
+<td width="20%" align="center"><a accesskey="u" href="part-functions.html">上一级</a></td>
+<td width="40%" align="right"> <a accesskey="n" href="others.html">下一页</a>
+</td>
+</tr>
+<tr>
+<td width="40%" align="left" valign="top">第 9 章 皮肤 </td>
+<td width="20%" align="center"><a accesskey="h" href="index.html">起始页</a></td>
+<td width="40%" align="right" valign="top"> 第 11 章 其它功能</td>
+</tr>
+</table>
+</div>
+</body>
+</html>

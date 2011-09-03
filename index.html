@@ -4,7 +4,7 @@
 <title>小企鹅输入法（fcitx）</title>
 <link rel="stylesheet" href="docbook.css" type="text/css">
 <meta name="generator" content="DocBook XSL Stylesheets V1.75.2">
-<meta name="description" content="小企鹅中文输入法（Free Chinese Input Toy for X，fcitx） 是一个以GPL方式发布的XIM简体中文输入法， 编写它的目是为X桌面环境提供一个轻量级、 尽量少依赖其它库的简体中文输入方案。">
+<meta name="description" content="小企鹅中文输入法（Free Chinese Input Toy for X，fcitx） 是一个以GPL方式发布的输入法框架， 编写它的目是为桌面环境提供一个灵活的输入方案。">
 <link rel="home" href="index.html" title="小企鹅输入法（fcitx）">
 <link rel="next" href="glossary.html" title="术语表">
 </head>
@@ -25,14 +25,13 @@
 <div class="titlepage">
 <div>
 <div><h1 class="title">
-<a name="id14821014"></a>小企鹅输入法（fcitx）</h1></div>
+<a name="id3986462"></a>小企鹅输入法（fcitx）</h1></div>
 <div><p class="copyright">版权 © 2005, 2006, 2007, 2008, 2009, 2010 Yuking</p></div>
 <div><div class="abstract" title="摘要">
 <p class="title"><b>摘要</b></p>
 <p>小企鹅中文输入法（Free Chinese Input Toy for X，fcitx）
-				是一个以GPL方式发布的XIM简体中文输入法，
-				编写它的目是为X桌面环境提供一个轻量级、
-				尽量少依赖其它库的简体中文输入方案。</p>
+				是一个以GPL方式发布的输入法框架，
+				编写它的目是为桌面环境提供一个灵活的输入方案。</p>
 </div></div>
 </div>
 <hr>
@@ -41,51 +40,58 @@
 <p><b>目录</b></p>
 <dl>
 <dt><span class="glossary"><a href="glossary.html">术语表</a></span></dt>
-<dt><span class="part"><a href="introduction.html">I. 软件概述</a></span></dt>
-<dt><span class="part"><a href="installation.html">II. 安装配置</a></span></dt>
+<dt><span class="part"><a href="part-introduction.html">I. 软件概述</a></span></dt>
+<dd><dl><dt><span class="article"><a href="article-introduction.html">软件概述</a></span></dt></dl></dd>
+<dt><span class="part"><a href="part-installation.html">II. 安装配置</a></span></dt>
 <dd><dl>
-<dt><span class="chapter"><a href="install.html">1. 安装</a></span></dt>
+<dt><span class="chapter"><a href="chapter-install.html">1. 安装</a></span></dt>
 <dd><dl>
-<dt><span class="sect1"><a href="install.html#source">1.1. 从源代码安装</a></span></dt>
-<dt><span class="sect1"><a href="package.html">1.2. 从预编译包安装</a></span></dt>
+<dt><span class="sect1"><a href="chapter-install.html#sect1-source">1.1. 从源代码安装</a></span></dt>
+<dt><span class="sect1"><a href="sect1-package.html">1.2. 从预编译包安装</a></span></dt>
 </dl></dd>
-<dt><span class="chapter"><a href="config-env.html">2. 配置环境变量</a></span></dt>
-<dt><span class="chapter"><a href="autostart.html">3. 跟随桌面环境自动启动</a></span></dt>
-<dt><span class="chapter"><a href="config.html">4. 配置文件说明</a></span></dt>
+<dt><span class="chapter"><a href="chapter-config-env.html">2. 配置环境</a></span></dt>
+<dt><span class="chapter"><a href="chapter-autostart.html">3. 跟随桌面环境自动启动</a></span></dt>
+<dt><span class="chapter"><a href="chapter-global-config.html">4. 全局配置文件说明</a></span></dt>
 </dl></dd>
-<dt><span class="part"><a href="functions.html">III. 功能说明</a></span></dt>
+<dt><span class="part"><a href="part-functions.html">III. 功能说明</a></span></dt>
 <dd><dl>
-<dt><span class="chapter"><a href="input-methods.html">5. 输入法</a></span></dt>
+<dt><span class="chapter"><a href="chapter-input-methods.html">5. 输入法</a></span></dt>
 <dd><dl>
-<dt><span class="sect1"><a href="input-methods.html#pinyin">5.1. 拼音输入法</a></span></dt>
+<dt><span class="sect1"><a href="chapter-input-methods.html#sect1-pinyin">5.1. 拼音输入法</a></span></dt>
 <dd><dl>
-<dt><span class="sect2"><a href="input-methods.html#id14839969">5.1.1. 常用字表</a></span></dt>
-<dt><span class="sect2"><a href="input-methods.html#id14840003">5.1.2. 双拼输入</a></span></dt>
-<dt><span class="sect2"><a href="input-methods.html#id14905940">5.1.3. 以词定字</a></span></dt>
-<dt><span class="sect2"><a href="input-methods.html#id14905953">5.1.4. 特殊符号输入</a></span></dt>
-<dt><span class="sect2"><a href="input-methods.html#id14908386">5.1.5. 制作拼音库</a></span></dt>
+<dt><span class="sect2"><a href="chapter-input-methods.html#id4039031">5.1.1. 常用字表</a></span></dt>
+<dt><span class="sect2"><a href="chapter-input-methods.html#id4070547">5.1.2. 双拼输入</a></span></dt>
+<dt><span class="sect2"><a href="chapter-input-methods.html#id4053881">5.1.3. 以词定字</a></span></dt>
+<dt><span class="sect2"><a href="chapter-input-methods.html#id4038025">5.1.4. 特殊符号输入</a></span></dt>
+<dt><span class="sect2"><a href="chapter-input-methods.html#id4034073">5.1.5. 制作拼音库</a></span></dt>
 </dl></dd>
-<dt><span class="sect1"><a href="quwei.html">5.2. 区位输入法</a></span></dt>
-<dt><span class="sect1"><a href="code-table.html">5.3. 码表输入法</a></span></dt>
+<dt><span class="sect1"><a href="sect1-quwei.html">5.2. 区位输入法</a></span></dt>
+<dt><span class="sect1"><a href="sect1-code-table.html">5.3. 码表输入法</a></span></dt>
 <dd><dl>
-<dt><span class="sect2"><a href="code-table.html#id14953523">5.3.1. 制作码表</a></span></dt>
-<dt><span class="sect2"><a href="code-table.html#id14986011">5.3.2. 反查拼音</a></span></dt>
+<dt><span class="sect2"><a href="sect1-code-table.html#id4130422">5.3.1. 制作码表</a></span></dt>
+<dt><span class="sect2"><a href="sect1-code-table.html#id4083443">5.3.2. 反查拼音</a></span></dt>
 </dl></dd>
 </dl></dd>
 <dt><span class="chapter"><a href="chinese-punctuation.html">6. 中文标点</a></span></dt>
 <dt><span class="chapter"><a href="quick-phrase.html">7. 快速输入</a></span></dt>
-<dt><span class="chapter"><a href="system-tray-icon.html">8. 系统托盘图标</a></span></dt>
-<dt><span class="chapter"><a href="record.html">9. 记录模式</a></span></dt>
-<dt><span class="chapter"><a href="skin.html">10. 皮肤</a></span></dt>
+<dt><span class="chapter"><a href="chapter-system-tray-icon.html">8. 系统托盘图标</a></span></dt>
+<dt><span class="chapter"><a href="chapter-skin.html">9. 皮肤</a></span></dt>
+<dt><span class="chapter"><a href="chapter-remote.html">10. 通过命令控制Fcitx</a></span></dt>
 <dt><span class="chapter"><a href="others.html">11. 其它功能</a></span></dt>
 </dl></dd>
-<dt><span class="part"><a href="faq.html">IV. 常见问题</a></span></dt>
-<dt><span class="part"><a href="thanks.html">V. 致谢</a></span></dt>
-<dt><span class="part"><a href="appendix.html">VI. 附录</a></span></dt>
+<dt><span class="part"><a href="part-appendix.html">IV. 附录</a></span></dt>
 <dd><dl>
-<dt><span class="chapter"><a href="hot-key.html">12. 热键</a></span></dt>
-<dt><span class="chapter"><a href="compile.html">13. 编译安装流程</a></span></dt>
+<dt><span class="chapter"><a href="chapter-hotkey.html">12. 热键</a></span></dt>
+<dt><span class="chapter"><a href="chapter-related-project.html">13. 相关项目</a></span></dt>
+<dt><span class="chapter"><a href="chapter-compile.html">14. 编译安装流程</a></span></dt>
+<dd><dl>
+<dt><span class="sect1"><a href="chapter-compile.html#sect1-dependencies">14.1. 依赖</a></span></dt>
+<dt><span class="sect1"><a href="sect1-install.html">14.2. 安装</a></span></dt>
+<dt><span class="sect1"><a href="sect1-uninstall.html">14.3. 卸载</a></span></dt>
 </dl></dd>
+<dt><span class="chapter"><a href="faq.html">15. 常见问题</a></span></dt>
+</dl></dd>
+<dt><span class="article"><a href="article-thanks.html">致谢</a></span></dt>
 </dl>
 </div>
 </div>
