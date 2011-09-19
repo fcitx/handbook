@@ -59,6 +59,12 @@
 			export QT_IM_MODULE=fcitx # 或者是xim，取决于你是否编译了对应的输入法模块
 		</pre>
 <p>
+		如果你需要使用im module，你需要保证dbus正确初始化。如果你的fcitx启动输出中包含了dbus相关的错误，请在你的启动脚本开头加入
+		</p>
+<pre class="programlisting">
+			eval `dbus-launch --sh-syntax --exit-with-session`
+		</pre>
+<p>
 	</p>
 <p>
 		更详细的说明参考后面的<a class="link" href="faq.html" title="第 15 章 常见问题">Faq</a>。
