@@ -31,17 +31,17 @@
 <dl>
 <dt><span class="sect1"><a href="chapter-input-methods.html#sect1-pinyin">5.1. 拼音输入法</a></span></dt>
 <dd><dl>
-<dt><span class="sect2"><a href="chapter-input-methods.html#id3233981">5.1.1. 常用字表</a></span></dt>
-<dt><span class="sect2"><a href="chapter-input-methods.html#id3228994">5.1.2. 双拼输入</a></span></dt>
-<dt><span class="sect2"><a href="chapter-input-methods.html#id3235203">5.1.3. 以词定字</a></span></dt>
-<dt><span class="sect2"><a href="chapter-input-methods.html#id3231953">5.1.4. 特殊符号输入</a></span></dt>
-<dt><span class="sect2"><a href="chapter-input-methods.html#id3211866">5.1.5. 制作拼音库</a></span></dt>
+<dt><span class="sect2"><a href="chapter-input-methods.html#id559771">5.1.1. 常用字表</a></span></dt>
+<dt><span class="sect2"><a href="chapter-input-methods.html#id586674">5.1.2. 双拼输入</a></span></dt>
+<dt><span class="sect2"><a href="chapter-input-methods.html#id601799">5.1.3. 以词定字</a></span></dt>
+<dt><span class="sect2"><a href="chapter-input-methods.html#id601838">5.1.4. 特殊符号输入</a></span></dt>
+<dt><span class="sect2"><a href="chapter-input-methods.html#id615678">5.1.5. 制作拼音库</a></span></dt>
 </dl></dd>
 <dt><span class="sect1"><a href="sect1-quwei.html">5.2. 区位输入法</a></span></dt>
 <dt><span class="sect1"><a href="sect1-code-table.html">5.3. 码表输入法</a></span></dt>
 <dd><dl>
-<dt><span class="sect2"><a href="sect1-code-table.html#id3327873">5.3.1. 制作码表</a></span></dt>
-<dt><span class="sect2"><a href="sect1-code-table.html#id3288738">5.3.2. 反查拼音</a></span></dt>
+<dt><span class="sect2"><a href="sect1-code-table.html#id601852">5.3.1. 制作码表</a></span></dt>
+<dt><span class="sect2"><a href="sect1-code-table.html#id628427">5.3.2. 反查拼音</a></span></dt>
 </dl></dd>
 </dl>
 </div>
@@ -58,7 +58,7 @@
 </ul></div>
 <div class="sect2" title="5.1.1. 常用字表">
 <div class="titlepage"><div><div><h3 class="title">
-<a name="id3233981"></a>5.1.1. 常用字表</h3></div></div></div>
+<a name="id559771"></a>5.1.1. 常用字表</h3></div></div></div>
 <p>设置常用字表的目的是为了方便录入某些常用字。</p>
 <p>在候选字中，处于该表中的字总是排在其它字的前面。
 		fcitx的默认常用字表是空的。您可以用左ctrl+8/7来添加/删除常用字。
@@ -72,7 +72,7 @@
 </div>
 <div class="sect2" title="5.1.2. 双拼输入">
 <div class="titlepage"><div><div><h3 class="title">
-<a name="id3228994"></a>5.1.2. 双拼输入</h3></div></div></div>
+<a name="id586674"></a>5.1.2. 双拼输入</h3></div></div></div>
 <p>如果在配置文件中打开双拼选项，即可进行双拼输入。
 		程序默认采用自然码的双拼方案，您也可以自定义键盘方案。
 		如果需要自定义，请将存放双拼方案的文件放在
@@ -82,7 +82,7 @@
 </div>
 <div class="sect2" title="5.1.3. 以词定字">
 <div class="titlepage"><div><div><h3 class="title">
-<a name="id3235203"></a>5.1.3. 以词定字</h3></div></div></div>
+<a name="id601799"></a>5.1.3. 以词定字</h3></div></div></div>
 <p>fcitx支持“以词定字”，以方便录入某些排序比较靠后的字。
 		利用SHIFT_&lt;词组序号&gt;，按以词定字键（默认为'['/']'）选择该词组的第一个或最后一个字。</p>
 <p>比如，在默认设置下，如果需要录入“亥”字，可以输入“jh”，
@@ -92,7 +92,7 @@
 </div>
 <div class="sect2" title="5.1.4. 特殊符号输入">
 <div class="titlepage"><div><div><h3 class="title">
-<a name="id3231953"></a>5.1.4. 特殊符号输入</h3></div></div></div>
+<a name="id601838"></a>5.1.4. 特殊符号输入</h3></div></div></div>
 <p>为了录入特殊符号，您必须将特殊符号按下列格式放在一个文件中：</p>
 <p>&lt;编码&gt; &lt;符号&gt;</p>
 <p>每个符号占一行。
@@ -108,7 +108,7 @@
 </div>
 <div class="sect2" title="5.1.5. 制作拼音库">
 <div class="titlepage"><div><div><h3 class="title">
-<a name="id3211866"></a>5.1.5. 制作拼音库</h3></div></div></div>
+<a name="id615678"></a>5.1.5. 制作拼音库</h3></div></div></div>
 <p>在tools目录下提供了一个制作拼音库的工具createPYMB。用法如下：</p>
 <div class="cmdsynopsis"><p><code class="command">./createPYMB</code>  {<em class="replaceable"><code>拼音单字库</code></em>} {<em class="replaceable"><code>拼音词组库</code></em>}</p></div>
 <p>该工具将在当前目录下生成pybase.mb和pyphrase.mb，
